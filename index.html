@@ -3,160 +3,122 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sweet Bonanza — Бонус до 500%</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+  <title>Sweet Bonanza</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      font-family: 'Fredoka', sans-serif;
-      background: url('e3f00453-20fe-4459-8ba4-5757a07e500d.png') no-repeat center center fixed;
+      font-family: 'Poppins', sans-serif;
+      background: url('sweet-bonanza-bg.png') no-repeat center center fixed;
       background-size: cover;
-      color: #fff;
-      min-height: 100vh;
-      position: relative;
-      overflow-x: hidden;
-    }
-
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom, rgba(255, 105, 180, 0.4), rgba(255, 20, 147, 0.6));
-      z-index: 0;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 20px;
     }
 
     .container {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 50px 20px;
-      min-height: 100vh;
-      text-align: center;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(15px);
+      background: rgba(0, 0, 0, 0.55);
+      padding: 40px;
       border-radius: 25px;
-      padding: 40px 30px;
       max-width: 700px;
       width: 100%;
-      box-shadow: 0 0 25px rgba(255, 105, 180, 0.5);
-      animation: fadeInUp 1s ease-out;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+      box-shadow: 0 0 30px rgba(255, 192, 203, 0.5);
     }
 
     h1 {
-      font-size: 40px;
-      margin-bottom: 20px;
-      color: #fff;
-      animation: popIn 1.2s ease;
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: #ff69b4;
+      animation: bounce 1s infinite alternate;
     }
 
     p {
-      font-size: 18px;
-      line-height: 1.6;
-      margin: 0 0 15px;
-      color: #ffd1ec;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      line-height: 1.5;
     }
 
     .highlight {
-      color: #ffeb3b;
-      font-weight: 600;
+      color: #ffcc00;
+      font-weight: bold;
     }
 
-    .btn {
-      display: inline-block;
-      margin-top: 30px;
-      background: linear-gradient(45deg, #ff69b4, #ff1493);
-      padding: 15px 40px;
-      font-size: 18px;
-      color: white;
+    .cta-btn {
+      background-color: #ff69b4;
       border: none;
-      border-radius: 50px;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      border-radius: 30px;
       cursor: pointer;
-      text-decoration: none;
-      transition: 0.3s;
+      transition: background 0.3s ease;
     }
 
-    .btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px #fff5;
+    .cta-btn:hover {
+      background-color: #ff1493;
     }
 
     .timer {
-      font-size: 24px;
+      font-size: 1.3rem;
       font-weight: 600;
-      color: #ffb3dc;
-      margin-top: 15px;
-      animation: pulse 1.5s infinite;
+      margin-bottom: 20px;
+      color: #fff;
     }
 
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-10px); }
     }
 
-    @keyframes popIn {
-      0% { transform: scale(0.8); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.6; }
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 28px;
-      }
-      p {
-        font-size: 16px;
-      }
-      .btn {
-        padding: 12px 25px;
-        font-size: 16px;
-      }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
     }
   </style>
 </head>
 <body>
-  <div class="overlay"></div>
   <div class="container">
-    <div class="card">
-      <h1>🎉 Добро пожаловать в Sweet Bonanza!</h1>
-      <p>Погрузись в мир сладких выигрышей и ярких эмоций!</p>
-      <p><span class="highlight">🔥 До 500% бонус</span> новым игрокам — только сейчас!</p>
-      <p>Запускай игру, получай бонус и выигрывай реальные деньги!</p>
-      <div class="timer" id="timer">00:10:00</div>
-      <a class="btn" href="https://1wmndv.life/v3/2672/sweet-bonanza?p=n3qw" target="_blank">Играть с бонусом</a>
-    </div>
+    <h1>🎉 Добро пожаловать в Sweet Bonanza!</h1>
+    <p>Погрузись в красочный мир сладостей, фруктов и мгновенных выигрышей. Участвуй в популярной онлайн-игре <span class="highlight">Sweet Bonanza</span> и сорви свой сладкий куш уже сегодня!</p>
+    <p>✨ <span class="highlight">Бонус для новых клиентов:</span> получи до <strong>500% к первому депозиту</strong>!</p>
+    <p>Проверь удачу в яркой и динамичной игре, где каждый спин может принести огромный выигрыш!</p>
+    <p>🎁 <strong>Не упусти свой шанс — жми кнопку ниже и начни прямо сейчас!</strong></p>
+
+    <div class="timer" id="countdown">⏳ Акция заканчивается через: <span id="time"></span></div>
+
+    <a href="https://1w.run/?p=SqoO" target="_blank">
+      <button class="cta-btn">Играть с бонусом</button>
+    </a>
   </div>
 
   <script>
-    // Таймер обратного отсчёта на 10 минут
-    let time = 10 * 60;
-    const timerEl = document.getElementById('timer');
+    // Таймер на 30 минут
+    let countdownElement = document.getElementById('time');
+    let endTime = new Date().getTime() + 30 * 60 * 1000;
 
     function updateTimer() {
-      const minutes = Math.floor(time / 60);
-      const seconds = time % 60;
-      timerEl.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-      if (time > 0) time--;
+      let now = new Date().getTime();
+      let distance = endTime - now;
+
+      if (distance < 0) {
+        countdownElement.innerHTML = "Время истекло!";
+        return;
+      }
+
+      let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownElement.innerHTML = `${minutes}м ${seconds}с`;
     }
 
     setInterval(updateTimer, 1000);
