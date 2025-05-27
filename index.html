@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sweet Bonanza — Бонус до 500%</title>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -27,7 +27,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.75));
+      background: linear-gradient(to bottom, rgba(255, 105, 180, 0.4), rgba(255, 20, 147, 0.6));
       z-index: 0;
     }
 
@@ -49,20 +49,22 @@
       padding: 40px 30px;
       max-width: 700px;
       width: 100%;
-      box-shadow: 0 0 25px rgba(0,0,0,0.5);
+      box-shadow: 0 0 25px rgba(255, 105, 180, 0.5);
+      animation: fadeInUp 1s ease-out;
     }
 
     h1 {
       font-size: 40px;
       margin-bottom: 20px;
       color: #fff;
+      animation: popIn 1.2s ease;
     }
 
     p {
       font-size: 18px;
       line-height: 1.6;
       margin: 0 0 15px;
-      color: #ddd;
+      color: #ffd1ec;
     }
 
     .highlight {
@@ -73,7 +75,7 @@
     .btn {
       display: inline-block;
       margin-top: 30px;
-      background: linear-gradient(45deg, #ff3cac, #784ba0, #2b86c5);
+      background: linear-gradient(45deg, #ff69b4, #ff1493);
       padding: 15px 40px;
       font-size: 18px;
       color: white;
@@ -89,15 +91,42 @@
       box-shadow: 0 0 15px #fff5;
     }
 
+    .timer {
+      font-size: 24px;
+      font-weight: 600;
+      color: #ffb3dc;
+      margin-top: 15px;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+
     @media (max-width: 600px) {
       h1 {
         font-size: 28px;
       }
-
       p {
         font-size: 16px;
       }
-
       .btn {
         padding: 12px 25px;
         font-size: 16px;
@@ -107,16 +136,31 @@
 </head>
 <body>
   <div class="overlay"></div>
-
   <div class="container">
     <div class="card">
       <h1>🎉 Добро пожаловать в Sweet Bonanza!</h1>
       <p>Погрузись в мир сладких выигрышей и ярких эмоций!</p>
       <p><span class="highlight">🔥 До 500% бонус</span> новым игрокам — только сейчас!</p>
-      <p>Запускай игру, получай бонус и выигрывай настоящие деньги в любой момент!</p>
+      <p>Запускай игру, получай бонус и выигрывай реальные деньги!</p>
+      <div class="timer" id="timer">00:10:00</div>
       <a class="btn" href="https://1wmndv.life/v3/2672/sweet-bonanza?p=n3qw" target="_blank">Играть с бонусом</a>
     </div>
   </div>
+
+  <script>
+    // Таймер обратного отсчёта на 10 минут
+    let time = 10 * 60;
+    const timerEl = document.getElementById('timer');
+
+    function updateTimer() {
+      const minutes = Math.floor(time / 60);
+      const seconds = time % 60;
+      timerEl.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+      if (time > 0) time--;
+    }
+
+    setInterval(updateTimer, 1000);
+    updateTimer();
+  </script>
 </body>
 </html>
-
